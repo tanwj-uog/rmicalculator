@@ -45,7 +45,7 @@ public class calculatorclient extends java.rmi.server.UnicastRemoteObject implem
             calculator c = (calculator)
                            //Naming.lookup("rmi://localhost/CalculatorService");
                            Naming.lookup("rmi://52.149.157.162:1099/CalculatorService");
-		UnicastRemoteObject.exportObject(yourObject, 1100);
+		UnicastRemoteObject.exportObject(c, 1100);
             
 	    // Now use the reference c to call remote methods
 	    //System.out.println("3+21="+ c.add(cc, 3, 21) );		
