@@ -11,6 +11,7 @@ import java.rmi.Naming;			//Import the rmi naming - so you can lookup remote obj
 import java.rmi.RemoteException;	//Import the RemoteException class so you can catch it
 import java.net.MalformedURLException;	//Import the MalformedURLException class so you can catch it
 import java.rmi.NotBoundException;	//Import the NotBoundException class so you can catch it
+import java.rmi.server.UnicastRemoteObject;
 
 public class calculatorclient extends java.rmi.server.UnicastRemoteObject implements RMIClientIntf {
 
@@ -44,6 +45,7 @@ public class calculatorclient extends java.rmi.server.UnicastRemoteObject implem
             calculator c = (calculator)
                            //Naming.lookup("rmi://localhost/CalculatorService");
                            Naming.lookup("rmi://52.149.157.162:1099/CalculatorService");
+		UnicastRemoteObject.exportObject(yourObject, 1100)
             
 	    // Now use the reference c to call remote methods
 	    //System.out.println("3+21="+ c.add(cc, 3, 21) );		
