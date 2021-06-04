@@ -17,14 +17,16 @@ public class calculatorserver {
 
 		 try {
 			 System.out.println("Init server...\n");
+                         calculator c = new calculatorimpl();
 		 	//Construct a new CalculatorImpl object and bind it to the local rmiregistry
      		//N.b. it is possible to host multiple objects on a server
 			 
 			 System.out.println("Reg RMI...\n");
-			 Registry reg = LocateRegistry.createRegistry(port);
-			 calculator c = new calculatorimpl(); // Instantiate the servant class into an object
+                         LocateRegistry.createRegistry(port);
+			 //Registry reg = LocateRegistry.createRegistry(port);
+			 // calculator c = new calculatorimpl(); // Instantiate the servant class into an object
 			 
-			 reg.rebind("CalculatorService", c);
+			 //reg.bind("CalculatorService", c);
 			 Naming.rebind("rmi://10.0.0.6/CalculatorService", c); // Binding it to the naming service, the name will be used to call its method
 			 //UnicastRemoteObject.exportObject(c, 1100);
 			 System.out.println("Reg RMI completed!\n");
