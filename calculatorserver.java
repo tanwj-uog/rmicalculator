@@ -23,15 +23,15 @@ public class calculatorserver {
      		//N.b. it is possible to host multiple objects on a server
 			 
 			 System.out.println("Reg RMI...\n");
-             //LocateRegistry.createRegistry(port);  // For starting rmiregistry
-			 reg = LocateRegistry.createRegistry(port); 
+             LocateRegistry.createRegistry(port);  // For starting rmiregistry
+			 //reg = LocateRegistry.createRegistry(port); 
 			 
 			 //Registry reg = LocateRegistry.createRegistry(port);
 			 // calculator c = new calculatorimpl(); // Instantiate the servant class into an object
 			 
-			 reg.bind("CalculatorService", c);
-			 //Naming.rebind("rmi://10.0.0.6/CalculatorService", c); // Binding it to the naming service, the name will be used to call its method
-			 Naming.bind("10.0.0.6", c);
+			 //reg.bind("CalculatorService", c);
+			 Naming.rebind("rmi://52.149.157.162/CalculatorService", c); // Binding it to the naming service, the name will be used to call its method
+			 //Naming.bind("10.0.0.6", c);
 			 //UnicastRemoteObject.exportObject(c, 1100);
 			 System.out.println("Reg RMI completed!\n");
 			 
