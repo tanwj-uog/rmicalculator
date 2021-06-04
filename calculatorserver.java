@@ -17,6 +17,7 @@ public class calculatorserver {
 			 System.out.println("Init server...\n");
 		 	//Construct a new CalculatorImpl object and bind it to the local rmiregistry
      		//N.b. it is possible to host multiple objects on a server
+			 Registry reg = LocateRegistry.createRegistry(port);
 			 calculator c = new calculatorimpl(); // Instantiate the servant class into an object
 			 
 			 Naming.rebind("rmi://10.0.0.6/CalculatorService", c); // Binding it to the naming service, the name will be used to call its method
