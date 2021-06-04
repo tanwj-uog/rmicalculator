@@ -7,6 +7,8 @@
 
 import java.rmi.Naming;	//Import naming classes to bind to rmiregistry
 import java.rmi.server.UnicastRemoteObject;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 public class calculatorserver {
 	static int port = 1099;
