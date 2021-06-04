@@ -28,7 +28,7 @@ public class calculatorserver {
 		System.out.println("Reg RMI...\n");
         LocateRegistry.createRegistry(port);  // For starting rmiregistry
        	Naming.rebind("rmi://localhost:" + port + "/CalculatorService", c);
-		UnicastRemoteObject.exportObject(c, 1100);
+		//UnicastRemoteObject.exportObject(c, 1100);
 		
 		System.out.println("Reg RMI completed!\n");
 			 
