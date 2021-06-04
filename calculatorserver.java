@@ -30,7 +30,7 @@ public class calculatorserver {
 			 // calculator c = new calculatorimpl(); // Instantiate the servant class into an object
 			 
 			 //reg.bind("CalculatorService", c);
-			 Naming.rebind("rmi://52.149.157.162/CalculatorService", c); // Binding it to the naming service, the name will be used to call its method
+			 Naming.rebind("rmi://localhost/CalculatorService", c); // Binding it to the naming service, the name will be used to call its method
 			 //Naming.bind("10.0.0.6", c);
 			 //UnicastRemoteObject.exportObject(c, 1100);
 			 System.out.println("Reg RMI completed!\n");
