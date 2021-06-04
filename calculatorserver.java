@@ -24,12 +24,12 @@ public class calculatorserver {
 			 Registry reg = LocateRegistry.createRegistry(port);
 			 calculator c = new calculatorimpl(); // Instantiate the servant class into an object
 			 
-			 reg.rebind("CalculatorService", c)
+			 reg.rebind("CalculatorService", c);
 			 Naming.rebind("rmi://10.0.0.6/CalculatorService", c); // Binding it to the naming service, the name will be used to call its method
 			 //UnicastRemoteObject.exportObject(c, 1100);
 			 System.out.println("Reg RMI completed!\n");
 			 
-			 System.out.println("Server Started!")
+			 System.out.println("Server Started!");
 			 
      }
      catch (Exception e) {
